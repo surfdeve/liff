@@ -29,6 +29,7 @@
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
+  <button id="btnStn" onclick="clearStn()">Clear Session</button>
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
   <button onclick="openWindow()">Open Window</button>
@@ -44,6 +45,10 @@
 
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
+    function clearStn() {
+      sessionStorage.clear();
+    }
+
     function createUniversalLink() {
     }
 
@@ -77,7 +82,7 @@
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
-      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email())
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
     }
 
     function getEnvironment() {
