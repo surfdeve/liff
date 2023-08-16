@@ -63,6 +63,12 @@
     }
 
     async function shareMsg() {
+      await liff.shareTargetPicker([
+        {
+          "type": "text",
+          "text": "This message was sent by ShareTargetPidker"
+        }
+      ])
     }
 
     function logOut() {
@@ -163,6 +169,8 @@
 
     async function main() {
       // alert("LINE Developers x Skooldio")
+      let astk = "eyJhbGciOiJIUzI1NiJ9.YbGbbu5Cmll66He2Chm-3AGvvk8T8oWoNA4h0MFpzKUCdT2dmx0Y6AhjkaLQ_9GkgBe14jFBjYutE7PZB9uiX1VWQ3LHydRESKOk09C-iy6KhjStBY-zxYJbw88gYRFHDnZfReFpd_j6GpI6cYEZFAo0Cvq08rlyUGPd_BPzK0k.kAcVZ6WcwZdNJ23TsIiWuO1wcSKTeL_ZXn4-NSXLjf4";
+      console.log( astk.length,'length' );
       await liff.init({ liffId: "2000420929-Zldz3VdX" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       if(liff.isLoggedIn()) {
